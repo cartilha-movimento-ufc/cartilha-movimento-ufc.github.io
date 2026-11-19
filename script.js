@@ -3,7 +3,7 @@
 const exerciseCatalog = {
   marcha: {
     name: "Marcha estacionária",
-    file: "marcha-estacionaria.mp4",
+    file: "marcha-estacionaria.MP4",
     hasVariationVideo: false,
     howTo: "Em pé, segurando-se levemente no encosto de uma cadeira, alterne a elevação dos joelhos de forma suave, simulando uma caminhada no mesmo lugar.",
     variation: "Faça o movimento sentado(a) na cadeira, elevando os joelhos alternadamente de forma leve.",
@@ -11,7 +11,7 @@ const exerciseCatalog = {
   },
   alongamentos: {
     name: "Alongamentos gerais",
-    file: "alongamentos-gerais.mp4",
+    file: "alongamentos-gerais.MP4",
     hasVariationVideo: true,
     howTo: "Em pé, flexione suavemente o tronco para frente, deslizando as mãos em direção aos joelhos ou canelas, e retorne devagar à posição ereta com as mãos na cintura, olhando para frente.",
     variation: "Sentado(a) na cadeira com os pés firmes no chão, incline suavemente o tronco para frente, espreguiçando os braços em direção aos pés ou joelhos, e retorne devagar.",
@@ -19,7 +19,7 @@ const exerciseCatalog = {
   },
   mob_pelvica: {
     name: "Mob. pélvica",
-    file: "mobilidade-pelvica.mp4",
+    file: "mobilidade-pelvica.MP4",
     hasVariationVideo: false,
     howTo: "Sentado(a) em uma cadeira firme, com os pés apoiados no chão, balance suavemente o quadril para frente e para trás, arqueando e arredondando levemente a coluna lombar.",
     variation: "Realize o movimento de forma mais lenta e com menor amplitude caso sinta rigidez na lombar.",
@@ -27,7 +27,7 @@ const exerciseCatalog = {
   },
   respiracao: {
     name: "Controle da respiração/respiração diafragmática",
-    file: "respiracao-diafragmatica.mp4",
+    file: "respiracao-diafragmatica.MP4",
     hasVariationVideo: false,
     howTo: "Inspire profundamente pelo nariz enchendo o abdômen e solte o ar devagar pela boca com os lábios semicerrados, relaxando os ombros.",
     variation: "Sentado (a) confortavelmente com as costas apoiadas, feche os olhos levemente se preferir. Apoie uma mão no peito e a outra no abdômen. Inspire pelo nariz sentindo a mão da barriga subir e expire devagar pela boca.",
@@ -35,14 +35,14 @@ const exerciseCatalog = {
   },
   sentar_levantar: {
     name: "Sentar/levantar",
-    file: "sentar-levantar.mp4",
+    file: "sentar-levantar.MP4",
     hasVariationVideo: true,
     howTo: "Em pé, com os pés afastados na largura do quadril, flexione levemente os joelhos e o quadril para sentar-se de forma controlada na cadeira e, em seguida, levante-se novamente para a posição inicial.",
     variation: "Sentado(a) na cadeira com os pés firmes no chão, utilize um apoio firme à sua frente (pode ser um bastão, um cabo de vassoura, o encosto de outra cadeira ou um móvel firme). Segure com as duas mãos, incline levemente o tronco para frente e levante-se com segurança, retornando devagar para a cadeira.",
   },
   ponte: {
     name: "Ponte",
-    file: "ponte.mp4",
+    file: "ponte.MP4",
     hasVariationVideo: false,
     howTo: "Deitado(a) de barriga para cima com os joelhos dobrados e pés no chão, eleve suavemente o quadril contraindo os glúteos e retorne devagar.",
     variation: "Deitado(a) confortavelmente de barriga para cima na cama, com os joelhos dobrados e pés firmes, apoie os braços ao lado do corpo. Eleve o quadril apenas alguns centímetros, respeitando o seu limite de conforto, e retorne devagar.",
@@ -50,7 +50,7 @@ const exerciseCatalog = {
   },
   flexao_plantar: {
     name: "Flexão plantar",
-    file: "flexao-plantar.mp4",
+    file: "flexao-plantar.MP4",
     hasVariationVideo: false,
     howTo: "Em pé, apoiado(a) na parede ou cadeira, eleve os calcanhares ficando na ponta dos pés e abaixe-os lentamente.",
     variation: "Realize o exercício sentado(a) com os pés apoiados no chão, elevando apenas os calcanhares.",
@@ -58,7 +58,7 @@ const exerciseCatalog = {
   },
   abducao: {
     name: "Abdução/abertura lateral da perna",
-    file: "abertura-lateral-perna.mp4",
+    file: "abertura-lateral-perna.MP4",
     hasVariationVideo: true,
     howTo: "Em pé, com o corpo ereto, afaste uma das pernas para o lado de forma controlada e retorne à posição inicial, alternando os lados.",
     variation: "Apoie-se firmemente na parede ou no encosto de uma cadeira para manter o equilíbrio durante o movimento.",
@@ -66,7 +66,7 @@ const exerciseCatalog = {
   },
   degrau: {
     name: "Subir/descer degrau",
-    file: "subir-descer-degrau.mp4",
+    file: "subir-descer-degrau.MP4",
     hasVariationVideo: false,
     howTo: "Com apoio firme, suba com um pé em um degrau baixo ou plataforma segura e desça em seguida, alternando as pernas.",
     variation: "Com o apoio firme das mãos em um corrimão ou parede, escolha um único degrau baixo ou um pequeno desnível dentro de casa. Suba com um pé e depois com o outro no mesmo degrau, e em seguida desça com calma, repetindo o movimento de subir e descer no mesmo lugar.",
