@@ -12,7 +12,7 @@ const exerciseCatalog = {
   },
   alongamentos: {
     name: "Alongamentos gerais",
-    file: "alongamentos-gerais.mp4",
+    file: "assets/alongamentos-gerais.mp4",
     hasVariationVideo: true,
     howTo: "Em pé, flexione suavemente o tronco para frente, deslizando as mãos em direção aos joelhos ou canelas, e retorne devagar à posição ereta com as mãos na cintura, olhando para frente.",
     variation: "Sentado(a) na cadeira com os pés firmes no chão, incline suavemente o tronco para frente, espreguiçando os braços em direção aos pés ou joelhos, e retorne devagar.",
