@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Movimento - Cartilha Digital UFC</title>
+  
+  
+  <link rel="icon" type="image/png" href="assets/logo-icone2.png">
+  <link rel="apple-touch-icon" href="assets/logo-icone2.png">
+
+  <!-- Fontes Oficiais da Identidade Visual: Raleway e Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Ligação com o arquivo CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="app-shell">
+ <!-- TOPO FIXO -->
+  <header class="top-bar">
+    <div class="logo-horizontal" onclick="goTo('screen-home')" role="button" tabindex="0" aria-label="Voltar ao início Movimento">
+      <!-- Logo Horizontal do Cabeçalho -->
+     <img src="assets/logo-cabecalho.png" alt="Logo Movimento UFC" style="height: 50px; width: auto; display: block; margin-right: 15px;">
+    </div>
+
+ <div style="display: flex; align-items: center;">
+    <button id="btnGlobalAudio" class="btn-audio-top" onclick="toggleAudioPlayback()">
+      🔊 Ouvir Tela
+    </button>
+  </div>
+
+  </header>
+
+<!-- TELA 1: INÍCIO -->
+  <section id="screen-home" class="screen active">
+    <div class="hero-home">
+      <!-- Ícone Oficial Centralizado na Tela Inicial -->
+      <img src="assets/logo-icone.png" alt="Ícone Movimento" style="width: 150px; height: auto; margin: 0 auto 10px; display: block;" onerror="this.style.display='none';">
+      <h1>Bem-vindo à sua Cartilha Digital!</h1>
+      <p>Seu guia de bem-estar, movimento e cuidado com a coluna lombar.</p>
+    </div>
+
+    <button class="home-card primary" onclick="goTo('screen-weeks')">
+      <div class="home-card-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <div>
+        <h2>Começar acompanhamento</h2>
+        <p>Acesse suas semanas e a Árvore do Movimento</p>
+      </div>
+    </button>
+
+    <button class="home-card" onclick="goTo('screen-how-to')">
+      <div class="home-card-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <div>
+        <h2>Como usar a cartilha</h2>
+        <p>Entenda o passo a passo, dicas de segurança e áudios</p>
+      </div>
+    </button>
+
+    <button class="home-card" onclick="goTo('screen-records')">
+      <div class="home-card-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <div>
+        <h2>Meus Registros</h2>
+        <p>Consulte seu desempenho e histórico salvo</p>
+      </div>
+    </button>
+  </section>
+
+  <!-- TELA 2: COMO USAR -->
+  <section id="screen-how-to" class="screen">
+    <button class="btn-back" onclick="goTo('screen-home')">← Voltar ao Início</button>
+    <h2>Como usar a cartilha</h2>
+    
+    <div class="exercise-card">
+      <p><strong>1. Escolha sua semana:</strong> Siga a ordem das semanas, fazendo os exercícios no seu ritmo em casa.</p>
+      <p><strong>2. Ouça as instruções:</strong> Em qualquer tela, toque no botão <strong>🔊 Ouvir Tela</strong> no topo para escutar a audiodescrição.</p>
+      <p><strong>3. Adapte se precisar:</strong> Sentiu dificuldade? Toque em <strong>Ver variações</strong> para fazer o exercício sentado ou com apoio.</p>
+      <p><strong>4. Cultive sua Árvore:</strong> Ao terminar os exercícios da semana, preencha o acompanhamento para fazer um novo fruto crescer na sua Árvore do Movimento!</p>
+    </div>
+
+    <button class="btn-primary-full" onclick="goTo('screen-weeks')">Ir para as Semanas →</button>
+  </section>
+
+  <!-- TELA 3: JORNADA DE CUIDADO + ÁRVORE DO MOVIMENTO -->
+  <section id="screen-weeks" class="screen">
+    <button class="btn-back" onclick="goTo('screen-home')">← Voltar ao Início</button>
+    
+    <div>
+      <h2>Sua jornada de cuidado</h2>
+      <p>Escolha uma semana para acessar suas atividades.</p>
+    </div>
+
+    <!-- ÁRVORE DO MOVIMENTO INTERATIVA -->
+    <div class="tree-box">
+      <h3>🌳 Árvore do Movimento</h3>
+      <p class="tree-progress-text" id="treeStatusText">0 de 8 frutos colhidos</p>
+      
+      <svg id="movementTreeSvg" width="260" height="190" viewBox="0 0 260 190" aria-label="Árvore do Movimento com frutos representando semanas concluídas">
+        <!-- Grama -->
+        <ellipse cx="130" cy="176" rx="105" ry="12" fill="#8BE8E1" opacity="0.6"/>
+        <!-- Tronco -->
+        <path d="M118 175 L122 110 L102 88 L110 82 L126 100 L126 75 L136 75 L136 100 L152 82 L160 88 L140 110 L144 175 Z" fill="#7C5338"/>
+        <!-- Copa da Árvore -->
+        <circle cx="130" cy="68" r="52" fill="#30B532"/>
+        <circle cx="88" cy="84" r="36" fill="#44DC4C"/>
+        <circle cx="172" cy="84" r="36" fill="#44DC4C"/>
+        <circle cx="130" cy="45" r="34" fill="#44DC4C"/>
+        
+        <!-- 8 Frutos (Semanas 1 a 8) - Ficam dourados/laranjas quando concluídos -->
+        <g id="treeFruits">
+          <circle id="fruit-1" cx="85" cy="85" r="9" fill="#E2E8F0" stroke="#085884" stroke-width="2"/>
+          <circle id="fruit-2" cx="112" cy="52" r="9" fill="#E2E8F0" stroke="#085884" stroke-width="2"/>
+          <circle id="fruit-3" cx="148" cy="52" r="9" fill="#E2E8F0" stroke="#085884" stroke-width="2"/>
+          <circle id="fruit-4" cx="175" cy="85" r="9" fill="#E2E8F0" stroke="#085884" stroke-width="2"/>
+          <circle id="fruit-5" cx="105" cy="96" r="9" fill="#E2E8F0" stroke="#085884" stroke-width="2"/>
+          <circle id="fruit-6" cx="155" cy="96" r="9" fill="#E2E8F0" stroke="#085884" stroke-width="2"/>
+          <circle id="fruit-7" cx="130" cy="72" r="9" fill="#E2E8F0" stroke="#085884" stroke-width="2"/>
+          <circle id="fruit-8" cx="130" cy="30" r="10" fill="#E2E8F0" stroke="#085884" stroke-width="2"/>
+        </g>
+      </svg>
+      <p style="font-size: 15px; color: var(--texto-suave);">Cada semana concluída ilumina um fruto na sua árvore!</p>
+    </div>
+
+    <!-- Lista Dinâmica das Semanas -->
+    <div id="weeksListContainer" style="display: flex; flex-direction: column; gap: 12px;"></div>
+  </section>
+
+  <!-- TELA 4: DETALHES DA SEMANA E EXERCÍCIOS -->
+  <section id="screen-week-detail" class="screen">
+    <button class="btn-back" onclick="goTo('screen-weeks')">← Voltar às Semanas</button>
+    
+    <div>
+      <h2 id="detailWeekTitle">Semana 1</h2>
+      <div class="pain-edu-card" style="margin-top: 10px;">
+        <span>Educação em Dor</span>
+        <h3 id="detailPainTopic">Tema: O que é a dor?</h3>
+        <p id="detailPainDesc" style="font-size: 16px;"></p>
+        <button class="btn-audio-ex" style="margin-top: 10px;" onclick="readPainEducation()">
+          🔊 Ouvir sobre Educação em Dor
+        </button>
+      </div>
+    </div>
+
+    <div id="exercisesContainer" style="display: flex; flex-direction: column; gap: 16px;"></div>
+
+    <button class="btn-primary-full" onclick="openTracking()">
+      Concluir Semana e Registrar ✔
+    </button>
+  </section>
+
+  <!-- TELA 5: VARIAÇÕES DO EXERCÍCIO -->
+  <section id="screen-variations" class="screen">
+    <button class="btn-back" onclick="goTo('screen-week-detail')">← Voltar aos exercícios</button>
+    
+    <h2>Variações e Adaptações</h2>
+    <div class="pain-edu-card">
+      <h3 id="varExerciseName">Exercício</h3>
+      <p style="font-size: 16px;"><strong>Atenção:</strong> Escolha apenas uma das adaptações disponíveis. Não é necessário fazer todas.</p>
+    </div>
+
+    <div class="exercise-card">
+      <div class="exercise-header">
+        <span class="ex-num">1</span>
+        <span class="ex-title">Opção Adaptada (Com apoio / Sentado)</span>
+      </div>
+
+      <div class="media-placeholder">
+        <span style="font-size: 32px;">🎥</span>
+        <strong>Espaço reservado para Vídeo / GIF da Variação</strong>
+        <small id="varMediaFile">Arquivo: variacao-exercicio.mp4</small>
+      </div>
+
+      <div>
+        <h3>Como fazer?</h3>
+        <p id="varHowTo" style="margin-top: 6px;"></p>
+      </div>
+
+      <button class="btn-audio-ex" onclick="speakText(document.getElementById('varHowTo').innerText)">
+        🔊 Ouvir Audiodescrição da Variação
+      </button>
+    </div>
+
+    <button class="btn-primary-full" onclick="goTo('screen-week-detail')">Voltar aos exercícios</button>
+  </section>
+
+  <!-- TELA DE ACOMPANHAMENTO -->
+  <section id="screen-tracking" class="screen">
+    <button class="btn-back" onclick="goTo('screen-week-detail')">← Voltar aos exercícios</button>
+
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <span id="trackingProgressLabel" style="font-weight: 700; color: var(--petroleo-escuro);">Semana 1 de 8</span>
+        <span id="progressPercentText" style="font-weight: 700; font-size: 14px; color: var(--azul-medio);">12%</span>
+      </div>
+      <!-- Barra de Progresso Real -->
+      <div style="width: 100%; height: 12px; background-color: #E2E8F0; border-radius: 10px; overflow: hidden;">
+        <div id="progressBarFill" style="width: 12%; height: 100%; background: linear-gradient(90deg, var(--petroleo), var(--verde-escuro)); transition: width 0.4s ease;"></div>
+      </div>
+      <h2 style="margin-top: 10px;">Acompanhamento</h2>
+    </div>
+
+    <!-- Pergunta 1: Humor -->
+    <div class="form-group">
+      <label class="question">Como você está se sentindo?</label>
+      <div class="emoji-grid" id="moodGroup">
+        <button type="button" class="emoji-btn" onclick="selectOption('mood', 'Feliz', this)"><span>😄</span>Feliz</button>
+        <button type="button" class="emoji-btn" onclick="selectOption('mood', 'Bem', this)"><span>🙂</span>Bem</button>
+        <button type="button" class="emoji-btn" onclick="selectOption('mood', 'Neutro', this)"><span>😐</span>Neutro</button>
+        <button type="button" class="emoji-btn" onclick="selectOption('mood', 'Mal', this)"><span>🙁</span>Mal</button>
+        <button type="button" class="emoji-btn" onclick="selectOption('mood', 'Triste', this)"><span>😢</span>Triste</button>
+      </div>
+    </div>
+
+    <!-- Pergunta 2: Sono -->
+    <div class="form-group">
+      <label class="question">Como foi seu sono?</label>
+      <div class="emoji-grid" id="sleepGroup">
+        <button type="button" class="emoji-btn" onclick="selectOption('sleep', 'Ótimo', this)"><span>😴</span>Ótimo</button>
+        <button type="button" class="emoji-btn" onclick="selectOption('sleep', 'Bom', this)"><span>😊</span>Bom</button>
+        <button type="button" class="emoji-btn" onclick="selectOption('sleep', 'Regular', this)"><span>😐</span>Regular</button>
+        <button type="button" class="emoji-btn" onclick="selectOption('sleep', 'Ruim', this)"><span>😟</span>Ruim</button>
+        <button type="button" class="emoji-btn" onclick="selectOption('sleep', 'Péssimo', this)"><span>😫</span>Péssimo</button>
+      </div>
+    </div>
+
+    <!-- Pergunta 3: Realização -->
+    <div class="form-group">
+      <label class="question">Você conseguiu realizar os exercícios propostos?</label>
+      <label class="radio-option"><input type="radio" name="completedEx" value="Sim, todos."> Sim, todos.</label>
+      <label class="radio-option"><input type="radio" name="completedEx" value="Sim, alguns."> Sim, alguns.</label>
+      <label class="radio-option"><input type="radio" name="completedEx" value="Não consegui realizar."> Não consegui realizar.</label>
+    </div>
+
+    <!-- Pergunta 4: Ajuda -->
+    <div class="form-group">
+      <label class="question">Precisou de ajuda para realizar os exercícios?</label>
+      <label class="radio-option"><input type="radio" name="helpNeeded" value="Não, realizei sozinho(a)."> Não, realizei sozinho(a).</label>
+      <label class="radio-option"><input type="radio" name="helpNeeded" value="Sim, tive ajuda de um acompanhante."> Sim, tive ajuda de um acompanhante.</label>
+      <label class="radio-option"><input type="radio" name="helpNeeded" value="Não fiz nessa semana."> Não fiz nessa semana.</label>
+    </div>
+
+    <!-- Pergunta 5: Escala de Borg (0 a 10) -->
+    <div class="form-group">
+      <label class="question">Como você sentiu o esforço durante os exercícios?</label>
+      <div class="borg-info-box">
+        <strong>A Escala de Percepção de Esforço (0 a 10):</strong><br>
+        Para um treino ideal, nem muito leve nem pesadíssimo, o objetivo é manter o ritmo moderado, representado pelos números <strong>5 e 6</strong>.
+      </div>
+      <div class="borg-container" id="borgList"></div>
+    </div>
+
+    <!-- Pergunta 6: Relato livre -->
+    <div class="form-group">
+      <label class="question" for="userNotes">Gostaria de contar algo?</label>
+      <textarea id="userNotes" placeholder="Escreva aqui como foi sua semana ou se sentiu alguma dificuldade..."></textarea>
+    </div>
+
+    <button class="btn-primary-full" onclick="saveTracking()">Salvar acompanhamento</button>
+  </section>
+
+  <!-- TELA 7: MEUS REGISTROS -->
+  <section id="screen-records" class="screen">
+    <button class="btn-back" onclick="goTo('screen-home')">← Voltar ao Início</button>
+    <h2>Meus Registros</h2> 
+    <p>Acompanhe seu histórico semanal salvo neste aparelho.</p>
+    <div id="recordsContainer" style="display: flex; flex-direction: column; gap: 14px;"></div>
+  </section>
+</div>
+
+<!-- Ligação com o arquivo JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>

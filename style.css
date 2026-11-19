@@ -1,0 +1,555 @@
+:root {
+  /* Paleta Oficial Movimento UFC */
+  --azul-escuro: #085884;
+  --azul-medio: #116CAB;
+  --azul-claro: #3391C4;
+  --petroleo-escuro: #006C77;
+  --petroleo: #07899F;
+  --turquesa: #25A9B7;
+  --aqua-escuro: #43A8A1;
+  --aqua: #5CD1CC;
+  --aqua-claro: #8BE8E1;
+  --verde-escuro: #30B532;
+  --verde-medio: #44DC4C;
+  --verde-claro: #71F474;
+  --fundo: #F5F6FA;
+  --branco: #FFFFFF;
+  --texto-escuro: #1A2530;
+  --texto-suave: #4A5568;
+  --borda: #D1E3EC;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #E2E8F0;
+  color: var(--texto-escuro);
+  font-size: 18px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Container Mobile-First */
+.app-shell {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--fundo);
+  min-height: 100vh;
+  box-shadow: 0 0 25px rgba(8, 88, 132, 0.12);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+h1, h2, h3, .font-title {
+  font-family: 'Raleway', sans-serif;
+  color: var(--azul-escuro);
+}
+
+/* Cabeçalho Padrão */
+.top-bar {
+  background-color: var(--branco);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--aqua-claro);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.logo-text {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.05;
+  color: var(--azul-medio);
+  letter-spacing: 0.5px;
+}
+
+.btn-audio-top {
+  background-color: var(--azul-medio, #0284C7);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s;
+}
+
+.btn-audio-top:hover {
+  opacity: 0.9;
+}
+
+/* Efeito visual quando estiver falando */
+.btn-audio-top.speaking {
+  background-color: #10B981 !important; /* Verde mais discreto e bonito */
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+/* Área de Conteúdo */
+.screen {
+  display: none;
+  padding: 20px;
+  flex: 1;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* Botão Voltar */
+.btn-back {
+  background: var(--branco);
+  border: 2px solid var(--azul-medio);
+  color: var(--azul-escuro);
+  font-size: 17px;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+}
+
+/* TELA INICIAL (Proposta 2 - Cards Grandes) */
+.hero-home {
+  text-align: center;
+  padding: 16px 10px 6px;
+}
+
+.hero-home h1 {
+  font-size: 26px;
+  margin-top: 12px;
+  line-height: 1.25;
+}
+
+.hero-home p {
+  color: var(--texto-suave);
+  font-size: 18px;
+  margin-top: 6px;
+}
+
+.home-card {
+  background: var(--branco);
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 2px solid var(--borda);
+  box-shadow: 0 4px 12px rgba(8, 88, 132, 0.06);
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.15s, border-color 0.15s;
+  width: 100%;
+}
+
+.home-card:active {
+  transform: scale(0.98);
+}
+
+.home-card.primary {
+  background: linear-gradient(135deg, var(--azul-escuro), var(--azul-medio));
+  border-color: var(--azul-escuro);
+  color: var(--branco);
+}
+
+.home-card.primary h2,
+.home-card.primary p {
+  color: var(--branco);
+}
+
+.home-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background-color: rgba(139, 232, 225, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.home-card.primary .home-card-icon {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.home-card h2 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.home-card p {
+  font-size: 16px;
+  color: var(--texto-suave);
+  line-height: 1.35;
+}
+
+/* ÁRVORE DO MOVIMENTO */
+.tree-box {
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 18px;
+  border: 2px solid var(--aqua-claro);
+  text-align: center;
+}
+
+.tree-box h3 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.tree-progress-text {
+  font-size: 16px;
+  color: var(--petroleo-escuro);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* LISTA DE SEMANAS */
+.week-item {
+  background: var(--branco);
+  border-radius: 16px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid var(--borda);
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.week-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.week-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--azul-medio);
+  color: var(--branco);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.week-item.completed {
+  border-color: var(--verde-escuro);
+  background-color: #F2FDF3;
+}
+
+.week-item.completed .week-badge {
+  background-color: var(--verde-escuro);
+}
+
+.week-status {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background-color: #EBF5FA;
+  color: var(--azul-escuro);
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.week-item.completed .week-status {
+  background-color: #DCFCE7;
+  color: #166534;
+}
+
+/* EDUCAÇÃO EM DOR & EXERCÍCIOS */
+.pain-edu-card {
+  background: linear-gradient(135deg, #E6F7F8, #F0F9FF);
+  border-left: 6px solid var(--petroleo);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.pain-edu-card span {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--petroleo-escuro);
+  letter-spacing: 0.5px;
+}
+
+.pain-edu-card h3 {
+  font-size: 20px;
+  margin: 4px 0 8px;
+}
+
+.exercise-card {
+  background: var(--branco);
+  border-radius: 18px;
+  padding: 18px;
+  border: 2px solid var(--borda);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.exercise-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #E3F5F8;
+  padding: 10px 14px;
+  border-radius: 50px;
+}
+
+.ex-num {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ex-title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 19px;
+  color: var(--azul-escuro);
+}
+
+/* Espaço Reservado para Vídeo / GIF */
+.media-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: #E8EEF2;
+  border: 2px dashed var(--azul-claro);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  color: var(--azul-escuro);
+}
+
+.media-placeholder strong {
+  font-size: 17px;
+  margin-top: 6px;
+}
+
+.media-placeholder small {
+  font-size: 14px;
+  color: var(--texto-suave);
+  margin-top: 4px;
+}
+
+.ex-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.btn-variation {
+  flex: 1;
+  min-width: 160px;
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 48px;
+}
+
+.btn-audio-ex {
+  background-color: #E6F7F8;
+  color: var(--petroleo-escuro);
+  border: 2px solid var(--petroleo);
+  border-radius: 50px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 48px;
+}
+
+.btn-primary-full {
+  width: 100%;
+  background-color: var(--verde-escuro);
+  color: var(--branco);
+  border: none;
+  border-radius: 16px;
+  padding: 18px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(48, 181, 50, 0.25);
+  min-height: 58px;
+}
+
+/* ACOMPANHAMENTO & ESCALA DE BORG */
+.form-group {
+  background: var(--branco);
+  padding: 18px;
+  border-radius: 16px;
+  border: 2px solid var(--borda);
+}
+
+.form-group label.question {
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 19px;
+  color: var(--azul-escuro);
+  margin-bottom: 12px;
+}
+
+.emoji-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.emoji-btn {
+  background: var(--fundo);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 10px 4px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.emoji-btn span {
+  display: block;
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.emoji-btn.selected {
+  border-color: var(--azul-escuro);
+  background-color: #E0F2FE;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 2px solid var(--borda);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.radio-option input {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--azul-escuro);
+}
+
+/* Escala de Borg (0 a 10) */
+.borg-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.borg-info-box {
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.borg-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 3px solid transparent;
+  color: #111;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.borg-item.selected {
+  border-color: #000000;
+  transform: scale(1.02);
+}
+
+.borg-num {
+  background: rgba(255, 255, 255, 0.85);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+textarea {
+  width: 100%;
+  border: 2px solid var(--borda);
+  border-radius: 12px;
+  padding: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  min-height: 100px;
+}
