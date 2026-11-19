@@ -1,4 +1,3 @@
-
 // 1. BANCO DE DADOS DOS EXERCÍCIOS E SEMANAS (ORDEM EXATA)
 
 const exerciseCatalog = {
@@ -12,7 +11,7 @@ const exerciseCatalog = {
   },
   alongamentos: {
     name: "Alongamentos gerais",
-    file: "assets/alongamentos-gerais.mp4",
+    file: "alongamentos-gerais.mp4",
     hasVariationVideo: true,
     howTo: "Em pé, flexione suavemente o tronco para frente, deslizando as mãos em direção aos joelhos ou canelas, e retorne devagar à posição ereta com as mãos na cintura, olhando para frente.",
     variation: "Sentado(a) na cadeira com os pés firmes no chão, incline suavemente o tronco para frente, espreguiçando os braços em direção aos pés ou joelhos, e retorne devagar.",
@@ -39,7 +38,7 @@ const exerciseCatalog = {
     file: "sentar-levantar.mp4",
     hasVariationVideo: true,
     howTo: "Em pé, com os pés afastados na largura do quadril, flexione levemente os joelhos e o quadril para sentar-se de forma controlada na cadeira e, em seguida, levante-se novamente para a posição inicial.",
-   variation: "Sentado(a) na cadeira com os pés firmes no chão, utilize um apoio firme à sua frente (pode ser um bastão, um cabo de vassoura, o encosto de outra cadeira ou um móvel firme). Segure com as duas mãos, incline levemente o tronco para frente e levante-se com segurança, retornando devagar para a cadeira.",
+    variation: "Sentado(a) na cadeira com os pés firmes no chão, utilize um apoio firme à sua frente (pode ser um bastão, um cabo de vassoura, o encosto de outra cadeira ou um móvel firme). Segure com as duas mãos, incline levemente o tronco para frente e levante-se com segurança, retornando devagar para a cadeira.",
   },
   ponte: {
     name: "Ponte",
@@ -226,7 +225,7 @@ function openWeekDetail(weekNum) {
         <span class="ex-num">${index + 1}</span>
         <span class="ex-title">${ex.name}</span>
       </div>
-<div class="media-container">
+      <div class="media-container">
         <video src="assets/${ex.file}" autoplay loop muted playsinline style="width: 100%; border-radius: 12px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
         <div class="media-placeholder" style="display: none;">
           <span style="font-size: 32px;">🎬</span>
@@ -242,7 +241,7 @@ function openWeekDetail(weekNum) {
       </div>
 
       <div class="ex-actions">
-        <button class="btn-audio-ex" onclick="speakText('${ex.name}. ${ex.howTo} ${ex.audioDesc}')">
+        <button class="btn-audio-ex" onclick="speakText('${ex.name}. ${ex.howTo} ${ex.audioDesc || ''}')">
           🔊 Ouvir Exercício
         </button>
         <button class="btn-variation" onclick="openVariation('${exKey}')">
@@ -260,25 +259,20 @@ function openVariation(exerciseKey) {
   const ex = exerciseCatalog[exerciseKey];
   if (!ex) return;
 
-  // Atualiza os textos da tela de variação
   document.getElementById('varExerciseName').innerText = ex.name;
   document.getElementById('varHowTo').innerText = ex.variation || "Siga as orientações de adaptação com segurança.";
 
   const mediaBox = document.querySelector('#screen-variations .exercise-card');
   if (mediaBox) {
-    // Procura elementos existentes dentro da caixa de mídia
     let videoEl = mediaBox.querySelector('video');
     let logoBox = mediaBox.querySelector('.variation-logo-box');
     let placeholderEl = mediaBox.querySelector('.media-placeholder');
 
-    // Remove elementos antigos para evitar duplicação
     if (videoEl) videoEl.remove();
     if (logoBox) logoBox.remove();
     if (placeholderEl) placeholderEl.remove();
 
-    // Verifica se o exercício tem o arquivo de vídeo de variação cadastrado
     if (ex.hasVariationVideo && ex.file) {
-      // Se TEM vídeo, cria o player
       videoEl = document.createElement('video');
       videoEl.controls = true;
       videoEl.style.width = '100%';
@@ -292,7 +286,6 @@ function openVariation(exerciseKey) {
       const fileNameSpan = document.getElementById('varMediaFile');
       if (fileNameSpan) fileNameSpan.innerText = `Arquivo: var-${ex.file}`;
     } else {
-      // Se NÃO tem vídeo, exibe a logo do movimento com estilo centralizado
       const customLogoDiv = document.createElement('div');
       customLogoDiv.className = 'variation-logo-box';
       customLogoDiv.style.cssText = 'text-align: center; padding: 20px; background: #F8FAFC; border-radius: 8px; margin-top: 10px; border: 1px dashed #CBD5E1;';
@@ -310,7 +303,6 @@ function openVariation(exerciseKey) {
     }
   }
 
-  // Abre a tela de variações
   goTo('screen-variations');
 }
 
@@ -346,10 +338,8 @@ function openTracking() {
   document.querySelectorAll("input[type='radio']").forEach(r => r.checked = false);
   document.getElementById("userNotes").value = "";
 
-  // Atualiza o texto da semana na tela de acompanhamento
   document.getElementById("trackingProgressLabel").innerText = `Semana ${currentWeekNum} de 8`;
   
-  // Calcula a porcentagem real (ex: Semana 1 = 12.5%, Semana 8 = 100%)
   const pct = Math.round((currentWeekNum / 8) * 100);
   document.getElementById("progressPercentText").innerText = `${pct}%`;
   document.getElementById("progressBarFill").style.width = `${pct}%`;
@@ -419,7 +409,6 @@ function toggleAudioPlayback() {
 
   const btn = document.getElementById("btnGlobalAudio");
 
-  // Se já estiver falando ou pausado, o clique para e reseta o som
   if (window.speechSynthesis.speaking || window.speechSynthesis.paused) {
     window.speechSynthesis.cancel();
     if (btn) {
@@ -429,14 +418,13 @@ function toggleAudioPlayback() {
     return;
   }
 
-  // Pega o texto da tela ativa de forma limpa
   const activeScreen = document.querySelector(".screen.active");
   if (!activeScreen) return;
   const textToRead = activeScreen.innerText.replace(/🔊.*?\n/g, "");
 
   const utterance = new SpeechSynthesisUtterance(textToRead);
   utterance.lang = "pt-BR";
-  utterance.rate = 0.92; // Velocidade levemente pausada para idosos
+  utterance.rate = 0.92;
 
   if (btn) {
     btn.classList.add("speaking");
@@ -460,7 +448,6 @@ function toggleAudioPlayback() {
   window.speechSynthesis.speak(utterance);
 }
 
-// Função auxiliar para falar textos específicos (como os exercícios)
 function speakText(text) {
   if (!("speechSynthesis" in window)) return;
   window.speechSynthesis.cancel();
