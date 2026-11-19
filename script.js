@@ -226,7 +226,7 @@ function openWeekDetail(weekNum) {
         <span class="ex-title">${ex.name}</span>
       </div>
       <div class="media-container">
-        <video src="assets/${ex.file}" autoplay loop muted playsinline style="width: 100%; border-radius: 12px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+      <video src="/assets/${ex.file}" autoplay loop muted playsinline style="width: 100%; border-radius: 12px; display: none;">
         <div class="media-placeholder" style="display: none;">
           <span style="font-size: 32px;">🎬</span>
           <strong>Vídeo do Exercício</strong>
