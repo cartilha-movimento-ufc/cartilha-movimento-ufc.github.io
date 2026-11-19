@@ -226,13 +226,13 @@ function openWeekDetail(weekNum) {
         <span class="ex-title">${ex.name}</span>
       </div>
       <div class="media-container">
-      <video src="/assets/${ex.file}" autoplay loop muted playsinline style="width: 100%; border-radius: 12px; display: none;">
-        <div class="media-placeholder" style="display: none;">
-          <span style="font-size: 32px;">🎬</span>
-          <strong>Vídeo do Exercício</strong>
-          <small>Coloque '${ex.file}' na pasta assets</small>
-        </div>
-      </div>
+    <video src="/assets/${ex.file}" autoplay loop muted playsinline style="width: 100%; border-radius: 12px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"></video>
+    <div class="media-placeholder" style="display: none; flex-direction: column; align-items: center; justify-content: center; padding: 20px; background: #f5f5f5; border-radius: 12px; border: 2px dashed #ccc;">
+        <span style="font-size: 32px;">📁</span>
+        <strong>Vídeo do Exercício</strong>
+        <small>Coloque '${ex.file}' na pasta assets</small>
+    </div>
+</div>
 
       <div>
         <h3 style="font-size: 18px;">Como fazer?</h3>
